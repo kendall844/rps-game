@@ -58,13 +58,13 @@ function borderChoice(playerTurn) {
 function shuffleImg(playerTurn) {
     let shuffleInterval = setInterval(function () {
         const randomChoice = Math.floor(Math.random() * 3);
-        computerWait.src = "images/" + choices[randomChoice] + ".PNG";
+        computerWait.src = "images/" + choices[randomChoice].toLowerCase() + ".png";
     }, 500);
     setTimeout(function () {
         clearInterval(shuffleInterval);
 
         const computerTurn = choices[Math.floor(Math.random() * 3)];
-        computerWait.src = "images/" + computerTurn + ".PNG";
+        computerWait.src = "images/" + computerTurn.toLowerCase() + ".png";
 
         computerDisplay.textContent = "COMPUTER: " + computerTurn;
 
@@ -110,8 +110,8 @@ reset.addEventListener("click", function(){
     updateScore();
 
     resultDisplay.textContent = "";
-    playerWins.textContent = "PLAYER:";
-    computerWins.textContent = "COMPUTER:";
+    playerDisplay.textContent = "PLAYER:";
+    computerDisplay.textContent = "COMPUTER:";
 });
 
 

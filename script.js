@@ -1,5 +1,4 @@
 const choices = ["ROCK", "PAPER", "SCISSORS"];  //array of choices
-
 //declare const and select all images within class choice
 const playerDisplay = document.getElementById("playerChoice");
 const computerDisplay = document.getElementById("computerChoice");
@@ -8,6 +7,16 @@ const resultDisplay = document.getElementById("result");
 const computerWait = document.getElementById("questionMark");
 const choiceButtons = document.querySelectorAll(".choice");
 
+//extra scoreboard
+let playerWins = 0;
+let computerWins = 0;
+let ties = 0;
+
+const showPlayerScore = document.getElementById("playerScore");
+const showCompScore = document.getElementById("computerScore");
+const showTies = document.getElementById("tieScore");
+
+const reset = document.getElementById("resetScore");
 
 //loop through and add click eventListener to buttons and start the game
 for (let i = 0; i < choiceButtons.length; i++) {
@@ -69,6 +78,7 @@ function decideWinner(playerTurn, computerTurn) {
 
     if (playerTurn === computerTurn) {
         resultText = "It's a tie!"
+        ties++;
     }
     else if (
         (playerTurn === "ROCK" && computerTurn === "SCISSORS") ||
@@ -76,11 +86,32 @@ function decideWinner(playerTurn, computerTurn) {
         (playerTurn === "SCISSORS" && computerTurn === "PAPER")
     ) {
         resultText = "You win!"
+        playerWins++;
     }
     else {
         resultText = "Computer wins!"
+        computerWins++;
     }
     resultDisplay.textContent = resultText;
+    updateScore();
 }
+
+function updateScore(){
+    showPlayerScore.textContent = "Player Wins: " + playerWins;
+    showCompScore.textContent = "Computer Wins: " + computerWins;
+    showTies.textContent = "Ties: " + ties;
+}
+
+reset.addEventListener("click", function(){
+    playerWins = 0;
+    computerWins = 0;
+    ties = 0;
+
+    updateScore();
+
+    resultDisplay.textContent = "";
+    playerWins.textContent = "PLAYER:";
+    computerWins.textContent = "COMPUTER:";
+});
 
 

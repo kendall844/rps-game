@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<!--
+  Name: Kendall Williford
+  Date: 02-26-2026
+  CSC 372-01
+
+  This is the index.html page for a rock, paper, scissors game. 
+  The file has sections for the player choice, computer choice, result, and scoreboard. 
+  It displays the choices and keeps track of the score. 
+-->
 <html lang="en">
 
 <head>
@@ -11,27 +20,44 @@
 
 <body>
     <h1>ROCK -- PAPER -- SCISSORS</h1>
+    <section id="yourThrow">
+        <h3>Click your choice below:</h3>
+        <div class="choices">
+            <button class="choice">
+                <img src="images/rock.PNG" alt="ROCK">
+            </button>
 
-    <div class="choices">
-        <button class="choice">
-            <img src="images/rock.PNG" alt="ROCK">
-        </button>
+            <button class="choice">
+                <img src="images/paper.PNG" alt="PAPER">
+            </button>
 
-        <button class="choice">
-            <img src="images/paper.PNG" alt="PAPER">
-        </button>
+            <button class="choice">
+                <img src="images/scissors.PNG" alt="SCISSORS">
+            </button>
+        </div>
+    </section>
 
-        <button class="choice">
-            <img src="images/scissors.PNG" alt="SCISSORS">
-        </button>
-    </div>
+    <section id="computerThrow">
+        <h3>Computer's choice:</h3>
+        <div id="thinking">
+            <img id="questionMark" src="images/question-mark.PNG" alt="QUESTION">
+        </div>
+        <div id="playerChoice">PLAYER:</div>
+        <div id="computerChoice"> COMPUTER:</div>
+    </section>
 
-    <div id="thinking">
-        <img id="questionMark" src="images/question-mark.PNG" alt="QUESTION">
-    </div>
-    <div id="playerChoice">PLAYER:</div>
-    <div id="computerChoice"> COMPUTER:</div>
-    <div id="result"> RESULT:</div>
+    <section id="resultSec">
+        <div id="result"> RESULT:</div>
+    </section>
+
+    <section>
+        <div id="scoreboard">
+            <h6 id="playerScore">Player Wins: </h6>
+            <h6 id="computerScore">Computer Wins: </h6>
+            <h6 id="tieScore">Ties: </h6>
+        </div>
+        <button id="resetScore">Reset Score</button>
+    </section>
 </body>
 
 </html>

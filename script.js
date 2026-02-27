@@ -70,7 +70,6 @@ function shuffleImg(playerTurn) {
 
         decideWinner(playerTurn, computerTurn);
     }, 3000);
-    console.log("Loading:", "images/" + choices[randomChoice].toLowerCase() + ".png");S
 }
 //function to decide who won the game and display result
 

@@ -58,18 +58,19 @@ function borderChoice(playerTurn) {
 function shuffleImg(playerTurn) {
     let shuffleInterval = setInterval(function () {
         const randomChoice = Math.floor(Math.random() * 3);
-        computerWait.src = "./images/" + choices[randomChoice].toLowerCase() + ".png";
+        computerWait.src = "images/" + choices[randomChoice].toLowerCase() + ".png";
     }, 500);
     setTimeout(function () {
         clearInterval(shuffleInterval);
 
         const computerTurn = choices[Math.floor(Math.random() * 3)];
-        computerWait.src = "./images/" + computerTurn.toLowerCase() + ".png";
+        computerWait.src = "images/" + computerTurn.toLowerCase() + ".png";
 
         computerDisplay.textContent = "COMPUTER: " + computerTurn;
 
         decideWinner(playerTurn, computerTurn);
     }, 3000);
+    console.log("Loading:", "images/" + choices[randomChoice].toLowerCase() + ".png");S
 }
 //function to decide who won the game and display result
 

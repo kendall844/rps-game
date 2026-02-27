@@ -109,7 +109,7 @@ reset.addEventListener("click", function(){
 
     updateScore();
 
-    resultDisplay.textContent = "";
+    resultDisplay.textContent = "RESULT:";
     playerDisplay.textContent = "PLAYER:";
     computerDisplay.textContent = "COMPUTER:";
 });
